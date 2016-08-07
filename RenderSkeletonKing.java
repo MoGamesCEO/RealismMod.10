@@ -3,6 +3,7 @@ package com.realism.mod.render;
 import com.realism.mod.RMGlobal;
 
 import com.realism.mod.entity.EntitySkeletonKing;
+import com.realism.mod.entity.ModelSkeletonKing;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -14,14 +15,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class RenderSkeletonKing extends RenderLiving
 {
-    private static final ResourceLocation SkeletonKingeTexture = new ResourceLocation(RMGlobal.Mod_ID + ":" + "textures/models/ModelSkeletonKing.png");
+    private static final ResourceLocation SkeletonKingeTexture = new ResourceLocation(RMGlobal.Mod_ID  + ":textures/models/ModelSkeletonKing.png");
 
-    public RenderSkeletonKing(RenderManager renderManagerIn, ModelBase modelBaseIn, float shadowSizeIn)
-    {
-        super(renderManagerIn, modelBaseIn, shadowSizeIn);
-    }
-    
-    protected ResourceLocation getEntityTexture(EntitySkeletonKing entity)
+	public RenderSkeletonKing(RenderManager manager)
+	{
+		super(manager, new ModelSkeletonKing(), 0.5F);
+	}
+
+	protected ResourceLocation getEntityTexture(EntitySkeletonKing entity)
     {
         return SkeletonKingeTexture;
     }

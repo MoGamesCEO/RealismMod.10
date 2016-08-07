@@ -1,11 +1,12 @@
 package com.realism.mod.entity;
 
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class ModelSkeletonKing extends ModelBase
+public class ModelRealZombie extends ModelBase
 {
   //fields
     ModelRenderer head;
@@ -15,7 +16,7 @@ public class ModelSkeletonKing extends ModelBase
     ModelRenderer rightleg;
     ModelRenderer leftleg;
   
-  public ModelSkeletonKing()
+  public ModelRealZombie()
   {
     textureWidth = 64;
     textureHeight = 64;
@@ -60,7 +61,7 @@ public class ModelSkeletonKing extends ModelBase
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
   {
-    super.render(entity, f, f1, f2, f3, f4, f5);
+    super.render( entity, f1, f2, f3, f4, f5, f);
     setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     head.render(f5);
     body.render(f5);
@@ -77,7 +78,7 @@ public class ModelSkeletonKing extends ModelBase
     model.rotateAngleZ = z;
   }
   
-  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
+	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
 	{
 		this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
 		this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
